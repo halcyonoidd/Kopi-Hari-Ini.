@@ -243,6 +243,24 @@ body{
 .menu .row .menu-card .menu-card-title {
     margin: 1.5rem auto 0.5rem;
 }
+
+.search-container {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.search-container input {
+  padding: 0.7rem 1rem;
+  width: 60%;
+  max-width: 400px;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+
+
+
 /* Menu Section End */
 
 

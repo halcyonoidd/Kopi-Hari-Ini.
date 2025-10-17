@@ -16,3 +16,24 @@ document.addEventListener('click', function(e){
         navbarNav.classList.remove('active');
     }
 });
+
+// Fitur pencarian menu
+const searchInput = document.getElementById('menu-search');
+const menuCards = document.querySelectorAll('.menu-card');
+
+if (searchInput) {
+  searchInput.addEventListener('keyup', function () {
+    const keyword = this.value.toLowerCase();
+
+    menuCards.forEach(card => {
+      const title = card.querySelector('.menu-card-title').textContent.toLowerCase();
+      if (title.includes(keyword)) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
+}
+
+
