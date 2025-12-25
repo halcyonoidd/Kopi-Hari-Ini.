@@ -1,0 +1,60 @@
+{
+  "menu": [
+    {
+      "id": 1,
+      "name": "Coffee Latte",
+      "price": 20000,
+      "image": "menu/(1)-Coffee-Latte.jpg",
+      "description": "Perpaduan sempurna espresso dengan susu steamed"
+    },
+    {
+      "id": 2,
+      "name": "Cappuccino",
+      "price": 22000,
+      "image": "menu/(1)-Coffee-Latte.jpg",
+      "description": "Espresso dengan foam susu yang lembut"
+    },
+    {
+      "id": 3,
+      "name": "Espresso",
+      "price": 18000,
+      "image": "menu/(1)-Coffee-Latte.jpg",
+      "description": "Kopi murni yang kuat dan pekat"
+    },
+    {
+      "id": 4,
+      "name": "Americano",
+      "price": 19000,
+      "image": "menu/(1)-Coffee-Latte.jpg",
+      "description": "Espresso dengan air panas"
+    },
+    {
+      "id": 5,
+      "name": "Mocha",
+      "price": 25000,
+      "image": "menu/(1)-Coffee-Latte.jpg",
+      "description": "Kombinasi kopi, cokelat, dan susu"
+    },
+    {
+      "id": 6,
+      "name": "Macchiato",
+      "price": 23000,
+      "image": "menu/(1)-Coffee-Latte.jpg",
+      "description": "Espresso dengan sedikit foam susu"
+    },
+    {
+      "id": 7,
+      "name": "Affogato",
+      "price": 27000,
+      "image": "menu/(1)-Coffee-Latte.jpg",
+      "description": "Es krim vanilla dengan espresso shot"
+    },
+    {
+      "id": 8,
+      "name": "Flat White",
+      "price": 24000,
+      "image": "menu/(1)-Coffee-Latte.jpg",
+      "description": "Espresso dengan microfoam susu"
+    }
+  ]
+}

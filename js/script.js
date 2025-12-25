@@ -17,23 +17,59 @@ document.addEventListener('click', function(e){
     }
 });
 
+// Load Menu dari JSON
+let menuData = [];
+
+async function loadMenu() {
+    try {
+        const response = await fetch('data/menu.json');
+        const data = await response.json();
+        menuData = data.menu;
+        displayMenu(menuData);
+    } catch (error) {
+        console.error('Error loading menu:', error);
+        document.getElementById('menu-container').innerHTML = 
+            '<p style="color: red; text-align: center; width: 100%;">Gagal memuat menu. Silakan refresh halaman.</p>';
+    }
+}
+
+function displayMenu(items) {
+    const menuContainer = document.getElementById('menu-container');
+    menuContainer.innerHTML = '';
+    
+    items.forEach(item => {
+        const menuCard = document.createElement('div');
+        menuCard.className = 'menu-card';
+        menuCard.innerHTML = `
+            <img src="${item.image}" alt="${item.name}" class="menu-card-img">
+            <h3 class="menu-card-title">-${item.name}-</h3>
+            <p class="menu-card-price">IDR ${formatPrice(item.price)}</p>
+        `;
+        menuContainer.appendChild(menuCard);
+    });
+}
+
+function formatPrice(price) {
+    return (price / 1000) + 'K';
+}
+
 // Fitur pencarian menu
 const searchInput = document.getElementById('menu-search');
-const menuCards = document.querySelectorAll('.menu-card');
 
 if (searchInput) {
-  searchInput.addEventListener('keyup', function () {
-    const keyword = this.value.toLowerCase();
-
-    menuCards.forEach(card => {
-      const title = card.querySelector('.menu-card-title').textContent.toLowerCase();
-      if (title.includes(keyword)) {
-        card.style.display = 'block';
-      } else {
-        card.style.display = 'none';
-      }
+    searchInput.addEventListener('keyup', function () {
+        const keyword = this.value.toLowerCase();
+        
+        const filteredMenu = menuData.filter(item => 
+            item.name.toLowerCase().includes(keyword) || 
+            item.description.toLowerCase().includes(keyword)
+        );
+        
+        displayMenu(filteredMenu);
     });
-  });
 }
+
+// Load menu saat halaman dimuat
+document.addEventListener('DOMContentLoaded', loadMenu);
 
 
